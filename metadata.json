@@ -1,0 +1,6 @@
+{
+  "name": "Ginger & White",
+  "description": "An elegant, high-contrast, multi-screen web application for the Ginger & White artisan cafe featuring an interactive menu, heritage storytelling, and location information.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
