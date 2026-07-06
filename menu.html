@@ -1,0 +1,344 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Menu | Ginger &amp; White</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#444748",
+                        "secondary-fixed": "#e4e2e2",
+                        "background": "#141313",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-strong": "#484848",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#636565",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#353434",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "outline": "#8e9192",
+                        "surface-variant": "#353434",
+                        "on-tertiary-container": "#636565",
+                        "on-secondary": "#303030",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "border-default": "#212121",
+                        "on-secondary-container": "#b9b8b8",
+                        "on-primary-fixed": "#1a1c1c",
+                        "tertiary-container": "#e2e2e2",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-tint": "#c6c6c7",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary-container": "#494949",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface": "#141313",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-error": "#690005",
+                        "surface-dim": "#141313",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-base": "#000000",
+                        "inverse-on-surface": "#313030",
+                        "text-tertiary": "#2c362f",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#e2e2e2",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#c8c6c6",
+                        "on-primary": "#2f3131",
+                        "primary": "#ffffff",
+                        "on-tertiary": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "30px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "4rem",
+                        "stack-lg": "2rem",
+                        "margin-mobile": "1rem",
+                        "stack-sm": "0.5rem",
+                        "gutter": "1.5rem",
+                        "stack-md": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Quicksand"],
+                        "label-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-xl": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "body-sm": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- Header Navigation Shell -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border-default">
+<div class="flex justify-between items-center h-20 w-full px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">Ginger &amp; White</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Home</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 transition-colors cursor-pointer" href="#">Menu</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">About</a>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-80">shopping_bag</span>
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:bg-secondary-fixed transition-colors">Order Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<!-- Hero Section -->
+<header class="mb-16 fade-in">
+<h1 class="font-headline-xl text-headline-xl mb-4 tracking-tight">Our Menu</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                A curated selection of artisanal coffee, seasonal brews, and handcrafted kitchen favorites designed to elevate your daily ritual.
+            </p>
+</header>
+<!-- Bento Layout Menu -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Category: Coffee & Espresso -->
+<section class="md:col-span-8 fade-in stagger-1">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4">Coffee &amp; Espresso</h2>
+<span class="text-on-surface-variant font-label-md">Traditional Favorites</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary-fixed transition-colors">House Flat White</h3>
+<span class="font-body-md">4.50</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Double shot of our seasonal espresso with velvety micro-foam.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary-fixed transition-colors">Oat Milk Latte</h3>
+<span class="font-body-md">5.25</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Creamy barista-grade oat milk blended with rich, chocolatey notes.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary-fixed transition-colors">Cortado</h3>
+<span class="font-body-md">4.00</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Equal parts espresso and steamed milk for a balanced kick.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary-fixed transition-colors">Batch Brew</h3>
+<span class="font-body-md">3.75</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Rotating single origin filter coffee, brewed fresh every hour.</p>
+</div>
+</div>
+<div class="mt-12 overflow-hidden rounded-lg border border-border-default h-[300px] relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, high-contrast close-up shot of a steaming cup of coffee with intricate latte art on a dark stone surface. The lighting is moody and focused, highlighting the rich texture of the crema. The overall aesthetic is minimal and luxurious, consistent with a premium dark-mode lifestyle brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDixK-WtB-z6I1jPg4d3JG4ot9Xw6pvP7MCsUTDOtZBizk3V_FBersWq6TCXmTVR0c6sakHC6dROYBZhDaNaTMNZsjTgWi7LI_b5OnBo15j5O8ybdBzUVpBGtow_xJ8uZwcUnTXk_TESHcdibA7RoHp-khxyYySqi-_YsPou_4chrzSYPyDbCpouqgaCdnyQ3j-h6_bLFQ34k3Wf4bKeA4R2l4nQp0qYSfhGcLeP0VjBJvua4CIR5csTg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-label-md bg-primary text-on-primary px-3 py-1 rounded-full text-xs uppercase tracking-widest mb-2 inline-block">Craft</span>
+<p class="font-headline-md text-white">Ethically Sourced Beans</p>
+</div>
+</div>
+</section>
+<!-- Category: Seasonal Brews (Side Column) -->
+<section class="md:col-span-4 fade-in stagger-2">
+<div class="bg-surface-container-low p-8 rounded-xl border border-border-default h-full">
+<h2 class="font-headline-lg text-headline-lg mb-8">Seasonal Brews</h2>
+<div class="space-y-8">
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Maple Pecan Iced</h3>
+<span class="font-body-md">6.50</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Cold brew infused with maple syrup and toasted pecan reduction.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Lavender Haze</h3>
+<span class="font-body-md">6.00</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">London fog with organic lavender and a hint of vanilla bean.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Ginger Spice Tea</h3>
+<span class="font-body-md">5.50</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">House-made ginger and turmeric root steep with wildflower honey.</p>
+</div>
+</div>
+<div class="mt-12 flex flex-col items-center justify-center p-6 border-2 border-dashed border-outline-variant rounded-lg text-center">
+<span class="material-symbols-outlined text-4xl mb-4 text-on-surface-variant">calendar_today</span>
+<p class="font-body-sm text-on-surface-variant">Limited availability. Check our chalkboard for daily experimental roasts.</p>
+</div>
+</div>
+</section>
+<!-- Category: Artisan Pastries -->
+<section class="md:col-span-5 fade-in stagger-3">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4">Pastries</h2>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="w-20 h-20 shrink-0 rounded-lg bg-cover bg-center border border-border-default" data-alt="A macro shot of a flaky, golden-brown croissant with multiple visible layers of buttery pastry. The background is a blurred dark wood, emphasizing the texture of the bread. The color palette is warm gold against deep shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTqeKLOZzBHzibiWSg6h1IS9yN2HfhFF0AKEVEHpnOmR02Bm2Vq4M6pPyhx9CqJUbNOH4b33PFaK2k3-nv5B4WqPbuk9D1QuzjTycDWOkgQxBE2LmiMK9-NGSY1EnNceamYbXN1PUBc0G-46uG0WBMpL2mXXAdJ5Fmg9Domp-knp8ucbHRKxVqdwsUQ2eio5bSdMnXzOXai3KHLC0vX-xRe4cIDE3QcGju3Qqab2RsIHY7XUXcsQO2kg')"></div>
+<div class="grow">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Classic Croissant</h3>
+<span class="font-body-md">4.25</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Hand-rolled over three days with French AOP butter.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-20 h-20 shrink-0 rounded-lg bg-cover bg-center border border-border-default" data-alt="A top-down view of a dark chocolate sea salt brownie with a fudgy center and a crackly top. A few grains of white sea salt are visible on the surface. The shot is minimalist and moody, framed with deep charcoal tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfDXwJx-bfiqKwVF2rdGEZCsgKLAEFbpAO0PcAy5pJaCC2aMUkjChEXp_ir6OVa2LiFoCZUMsII3XYhG1Q-8qHfXiFdGRAFhTI6Tj5u8XbrUv4s8LN3lSN96Urw1aoGhCaD8O6Hg8o7-kuuaf73PONHwUo9X2BLrS2DZ7SS5tAffCKVnUJLa1nnwYTOxnulHWY62y727k-vUs0ehvG6JeQolMqDe625HaFcAixmiUMmE4UokSz9jsh5w')"></div>
+<div class="grow">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Sea Salt Brownie</h3>
+<span class="font-body-md">4.50</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Valrhona dark chocolate with Maldon sea salt flakes.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-20 h-20 shrink-0 rounded-lg bg-cover bg-center border border-border-default" data-alt="An artisanal sourdough loaf sliced to reveal an airy, open crumb. The crust is dark and perfectly caramelized. The setting is a clean, modern kitchen with soft directional lighting that creates long, elegant shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASuL-CncqRaLkMvA29uyebRQyajddwiidi6zuINJzYA68FzofPl9JhcPrtg3QR_gLuIy5E_C8oQSFXrg5O8Io_cVBrULFB4Z2IqWsapKde42andJoy1ALwPj7avvvqoNjiL-nQsJJXE9jDPyuoXMNJmJiBVKfddvmv_DqJI4xFSxAl3lq_Br7wg4uPdcaZaOTyDfJBi1ac0Cig6acXWfPn29fRh3rXBknI_FCQ_MDaov9bKJyyMAorBA')"></div>
+<div class="grow">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Almond Bostock</h3>
+<span class="font-body-md">5.75</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Twice-baked brioche soaked in orange syrup and almond cream.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Hearty Brunch -->
+<section class="md:col-span-7 fade-in stagger-3">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4">Hearty Brunch</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="p-6 rounded-xl border border-border-default hover:bg-surface-container transition-colors group">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary">Smoked Salmon Tartine</h3>
+<p class="text-on-surface-variant font-body-sm mb-4">House-made sourdough, whipped herb cream cheese, capers, and pickled radish.</p>
+<span class="font-label-md text-primary">14.50</span>
+</div>
+<div class="p-6 rounded-xl border border-border-default hover:bg-surface-container transition-colors group">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary">Truffle Scrambled Eggs</h3>
+<p class="text-on-surface-variant font-body-sm mb-4">Slow-cooked organic eggs, black truffle oil, and shaved parmesan on sourdough.</p>
+<span class="font-label-md text-primary">16.00</span>
+</div>
+<div class="p-6 rounded-xl border border-border-default hover:bg-surface-container transition-colors group">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary">Avocado &amp; Chili</h3>
+<p class="text-on-surface-variant font-body-sm mb-4">Smashed Hass avocado, chili flakes, poached egg, and lime zest.</p>
+<span class="font-label-md text-primary">13.50</span>
+</div>
+<div class="p-6 rounded-xl border border-border-default hover:bg-surface-container transition-colors group">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary">Wild Mushroom Bowl</h3>
+<p class="text-on-surface-variant font-body-sm mb-4">Sautéed wild mushrooms, quinoa, baby kale, and a miso tahini dressing.</p>
+<span class="font-label-md text-primary">15.25</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Call to Action -->
+<section class="mt-24 py-16 px-8 rounded-3xl bg-surface-container-highest flex flex-col md:flex-row items-center justify-between gap-8 fade-in">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-2">Want it delivered?</h2>
+<p class="text-on-surface-variant font-body-lg">Order ahead and pick up at the bar or get it sent straight to your door.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md hover:opacity-90 transition-opacity">Order for Pickup</button>
+<button class="border border-outline text-primary px-8 py-4 rounded-full font-label-md hover:bg-surface-container transition-colors">View Delivery Apps</button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="mt-16 bg-surface-container-lowest border-t border-border-default">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto">
+<div class="mb-6 md:mb-0">
+<div class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Ginger &amp; White</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Ginger &amp; White. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Contact</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Shipping</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body></html>
